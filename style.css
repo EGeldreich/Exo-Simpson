@@ -23,6 +23,12 @@ body {
     width: 70%;
     margin: 0 auto;
 }
+.display-none {
+    display: none;
+}
+.display-block {
+    display: block;
+}
 
 /* HEADER */
 
@@ -41,22 +47,24 @@ header {
     vertical-align: top;
 }
 section {
-    padding: 30px 10px;
+    padding: 50px 30px;
     display: flex;
-    gap: 10px;
+    gap: 30px;
     background-color: white;
     width: 100%;
 }
-nav {
-    flex: 1 1 200px;
-    height: 160px;
+.topnav {
+    display: flex;
     padding: 20px;
     background-color: lightskyblue;
     color: white;
-    text-decoration: underline;
-    text-align: center;
-    line-height: 1.3em;
-    font-weight: 600;
+    text-transform: uppercase;
+    justify-content: center;
+}
+ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
 }
 article {
     width: 100%;
@@ -67,8 +75,19 @@ h1 {
     font-size: 2em;
     margin: 10px 0;
 }
+.article__images {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-top: 30px;
+}
+.article__image {
+    width: 100%;
+    border: 1px solid gray;
+}
 aside {
-    flex: 1 1 250px;
+    margin-top: 60px;
+    flex: 1 1 400px;
 }
 aside figure {
     padding: 10px;
@@ -79,14 +98,17 @@ aside figure {
     color: white;
     align-items: center;
     text-align: justify;
+    height: 100%;
 }
 .img-matt {
     border: 1px solid white;
     object-fit: cover;
-    height: 150px;
+    height: 250px;
 }
 aside figcaption {
     margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.5em;
 }
 
 /* FOOTER */
@@ -98,8 +120,26 @@ footer {
     padding: 5px;
 }
 
-@media (max-width: 800px) {
+
+/*  MEDIA QUERIES */
+
+
+@media (max-width: 880px) {
+    .container {
+        width: 100%;
+    }
     section {
         flex-wrap: wrap;
+    }
+    .topnav {
+        justify-content: left;
+    }
+    ul {
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 30px;
+    }
+    aside {
+        margin-top: 0;
     }
 }
